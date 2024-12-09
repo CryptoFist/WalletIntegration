@@ -2297,7 +2297,7 @@
   resolved "https://registry.yarnpkg.com/@polka/url/-/url-1.0.0-next.28.tgz#d45e01c4a56f143ee69c54dd6b12eade9e270a73"
   integrity sha512-8LduaNlMZGwdZ6qWrKlfa+2M4gahzFkprZiAt2TF8uS0qQgBizKXpXURqvTJ4WtmupWxaLqjRb2UCTe72mu+Aw==
 
-"@rainbow-me/rainbowkit@^2.2.1":
+"@rainbow-me/rainbowkit@^2.0.0":
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/@rainbow-me/rainbowkit/-/rainbowkit-2.2.1.tgz#1ad672aa87be3e8e4135bc12d13b03cc0a784221"
   integrity sha512-DvWbczNmm3BRr+EPZFwDK2vJRYxzSgHL0XzasL4RGMPsPuuRe9meLiTrznPqJvut7yNmib/ROqtblWJuxBvIKA==
@@ -2732,7 +2732,7 @@
   resolved "https://registry.yarnpkg.com/@tanstack/query-core/-/query-core-5.62.3.tgz#7cfde68f7d78807faebee2a2bb1e31b81067f46b"
   integrity sha512-Jp/nYoz8cnO7kqhOlSv8ke/0MJRJVGuZ0P/JO9KQ+f45mpN90hrerzavyTKeSoT/pOzeoOUkv1Xd0wPsxAWXfg==
 
-"@tanstack/react-query@^5.62.3":
+"@tanstack/react-query@^5.20.2":
   version "5.62.3"
   resolved "https://registry.yarnpkg.com/@tanstack/react-query/-/react-query-5.62.3.tgz#c6766b1764dcf924f6ed5fd88daf8d246e2f5c14"
   integrity sha512-y2zDNKuhgiuMgsKkqd4AcsLIBiCfEO8U11AdrtAUihmLbRNztPrlcZqx2lH1GacZsx+y1qRRbCcJLYTtF1vKsw==
@@ -12541,7 +12541,7 @@ vary@~1.1.2:
   resolved "https://registry.yarnpkg.com/vary/-/vary-1.1.2.tgz#2299f02c6ded30d4a5961b0b9f74524a18f634fc"
   integrity sha512-BNGbWLfd0eUPabhkXUVm0j8uuvREyTh5ovRa/dyow/BqAbZJyC+5fU+IzQOzmAKzYqYRAISoRhdQr3eIZ/PXqg==
 
-viem@^2.1.1, viem@^2.21.54:
+viem@^2.1.1, viem@^2.7.8:
   version "2.21.54"
   resolved "https://registry.yarnpkg.com/viem/-/viem-2.21.54.tgz#76d6f86ab8809078f1ac140ac1a2beadbc86b9f6"
   integrity sha512-G9mmtbua3UtnVY9BqAtWdNp+3AO+oWhD0B9KaEsZb6gcrOWgmA4rz02yqEMg+qW9m6KgKGie7q3zcHqJIw6AqA==
@@ -12593,7 +12593,7 @@ w3c-xmlserializer@^2.0.0:
   dependencies:
     xml-name-validator "^3.0.0"
 
-wagmi@^2.13.4:
+wagmi@^2.5.7:
   version "2.13.4"
   resolved "https://registry.yarnpkg.com/wagmi/-/wagmi-2.13.4.tgz#5b2f11e907f4f66d5c22ebda113047643622ed9f"
   integrity sha512-3/a6AZEZEJIZvxqHDv9e7R/pYYbi/oABogVOYnYN/ijI2WILD/09TjVYWXEzQCXtiNnimaTIWuGW6u/NKSAzFA==
