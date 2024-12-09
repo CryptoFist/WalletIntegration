@@ -1,25 +1,52 @@
-import logo from './logo.svg';
-import './App.css';
+import { useSDK } from "@metamask/sdk-react";
+import "./App.css";
+import { ConnectButton } from "@rainbow-me/rainbowkit";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const { sdk } = useSDK();
+    const connectMetamask = async () => {
+        try {
+            const accounts = await sdk.connect();
+            console.log(accounts);
+        } catch (error) {}
+    };
+
+    return (
+        <div className="App">
+            <div className="div-integration">
+                <button
+                    className="btn-connect"
+                    onClick={() => connectMetamask()}
+                >
+                    Connect Wallet
+                </button>
+            </div>
+            <ConnectButton.Custom>
+                {({
+                    account,
+                    chain,
+                    openAccountModal,
+                    openChainModal,
+                    openConnectModal,
+                    authenticationStatus,
+                    connectModalOpen,
+                    mounted,
+                }) => {
+                    const handleWalletConnect = () => {
+                        openConnectModal();
+                    };
+
+                    const ready = mounted && authenticationStatus !== "loading";
+                    const connected =
+                        ready &&
+                        account &&
+                        chain &&
+                        (!authenticationStatus ||
+                            authenticationStatus === "authenticated");
+                }}
+            </ConnectButton.Custom>
+        </div>
+    );
 }
 
 export default App;
