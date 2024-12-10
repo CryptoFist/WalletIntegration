@@ -1,7 +1,7 @@
 import "./App.css";
 import "@rainbow-me/rainbowkit/styles.css";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useDisconnect } from "wagmi";
 
 function App() {
@@ -22,7 +22,7 @@ function App() {
                     mounted,
                 }) => {
                     const handleWalletConnect = () => {
-                        if (isConnected == false) {
+                        if (isConnected === false) {
                             openConnectModal();
                         } else {
                             disconnect();
