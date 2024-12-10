@@ -1,25 +1,67 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import "@rainbow-me/rainbowkit/styles.css";
+import { ConnectButton } from "@rainbow-me/rainbowkit";
+import { useState } from "react";
+import { useDisconnect } from "wagmi";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const { disconnect } = useDisconnect();
+    const [address, setAddress] = useState("");
+    const [isConnected, setConnected] = useState(false);
+    return (
+        <div className="App">
+            <ConnectButton.Custom>
+                {({
+                    account,
+                    chain,
+                    openAccountModal,
+                    openChainModal,
+                    openConnectModal,
+                    authenticationStatus,
+                    connectModalOpen,
+                    mounted,
+                }) => {
+                    const handleWalletConnect = () => {
+                        if (isConnected === false) {
+                            openConnectModal();
+                        } else {
+                            disconnect();
+                        }
+                    };
+                    const ready = mounted && authenticationStatus !== "loading";
+                    const connected =
+                        ready &&
+                        account &&
+                        chain &&
+                        (!authenticationStatus ||
+                            authenticationStatus === "authenticated");
+
+                    setConnected(connected === true ? true : false);
+                    setAddress(connected === true ? account.address : "");
+
+                    if (connected === true) {
+                        return (
+                            <div>
+                                <button onClick={() => handleWalletConnect()}>
+                                    Disconnect Wallet
+                                </button>
+                                <p class="txt-address">{address}</p>
+                            </div>
+                        );
+                    } else {
+                        return (
+                            <div>
+                                <button onClick={() => handleWalletConnect()}>
+                                    Connect Wallet
+                                </button>
+                                <p class="txt-address">{address}</p>
+                            </div>
+                        );
+                    }
+                }}
+            </ConnectButton.Custom>
+        </div>
+    );
 }
 
 export default App;
